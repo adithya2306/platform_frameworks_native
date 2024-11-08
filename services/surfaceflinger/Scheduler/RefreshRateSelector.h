@@ -204,7 +204,7 @@ public:
         }
 
         auto toString() const {
-            return ftl::Concat("{touch=", touch, ", idle=", idle,
+            return ftl::Concat("{touch=", touch, ", idle=", idle, ", heuristicIdle=", heuristicIdle,
                                ", powerOnImminent=", powerOnImminent, '}');
         }
     };
@@ -492,7 +492,6 @@ private:
 
     DisplayModeIterator mMinRefreshRateModeIt GUARDED_BY(mLock);
     DisplayModeIterator mMaxRefreshRateModeIt GUARDED_BY(mLock);
-    DisplayModeIterator mIdleRefreshRateModeIt GUARDED_BY(mLock);
 
     // Display modes that satisfy the Policy's ranges, filtered and sorted by refresh rate.
     std::vector<FrameRateMode> mPrimaryFrameRates GUARDED_BY(mLock);
