@@ -528,6 +528,8 @@ private:
     std::optional<IdleTimerCallbacks> mIdleTimerCallbacks GUARDED_BY(mIdleTimerCallbacksMutex);
     // Used to detect (lack of) frame activity.
     ftl::Optional<scheduler::OneShotTimer> mIdleTimer;
+
+    Fps mIdleFps = 60_Hz;
 };
 
 } // namespace android::scheduler
